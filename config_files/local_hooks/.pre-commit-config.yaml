@@ -1,0 +1,26 @@
+# Configuration for local hooks (e.g. installed via pipx).
+repos:
+  - repo: local
+    hooks:
+    - id: isort
+      name: isort
+      entry: isort
+      language: system
+      args: [--force-single-line-imports, --lines-after-imports=2]
+      types: [python]
+    - id: black
+      name: black
+      entry: black
+      language: system
+      types: [python]
+    - id: flake8
+      name: flake8
+      entry: flake8
+      args: ["--ignore=E501,E704"]
+      language: system
+      types: [python]
+    - id: mypy
+      name: mypy
+      entry: mypy
+      language: system
+      types: [python]
